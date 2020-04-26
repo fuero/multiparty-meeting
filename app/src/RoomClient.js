@@ -29,6 +29,7 @@ let ScreenShare;
 let Spotlights;
 
 let turnServers,
+	trackerUrls,
 	requestTimeout,
 	transportOptions,
 	lastN,
@@ -39,6 +40,7 @@ if (process.env.NODE_ENV !== 'test')
 {
 	({
 		turnServers,
+		trackerUrls,
 		requestTimeout,
 		transportOptions,
 		lastN,
@@ -729,7 +731,7 @@ export default class RoomClient
 
 			this._webTorrent.seed(
 				files,
-				{ announceList: [ [ 'wss://tracker.lab.vvc.niif.hu:443' ] ] },
+				{ announceList: [ trackerUrls ] },
 				(newTorrent) =>
 				{
 					store.dispatch(requestActions.notify(

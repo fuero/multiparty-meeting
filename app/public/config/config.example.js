@@ -14,6 +14,10 @@ var config =
 			credential : 'example'
 		}
 	],
+	trackerUrls      : 
+	[
+		'wss://tracker.lab.vvc.niif.hu:443'
+	],
 	/**
 	 * If defaultResolution is set, it will override user settings when joining:
 	 * low ~ 320x240
